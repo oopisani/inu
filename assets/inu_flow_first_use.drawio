@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="inu_fluxo" id="PJ7Q0DrVUougNdQ_NhwM">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gjXERksRl2f-HJDjF30g-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rounded=1;labelBackgroundColor=none;" value="&lt;b&gt;INIT command&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="374" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-3" edge="1" parent="1" source="gjXERksRl2f-HJDjF30g-1" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="410" as="sourcePoint" />
+            <mxPoint x="414" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="&lt;b&gt;inu &lt;/b&gt;creates `inu-workspace` directory in user.home" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-5" edge="1" parent="1" source="gjXERksRl2f-HJDjF30g-4" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="410" as="sourcePoint" />
+            <mxPoint x="414" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="&lt;b&gt;inu &lt;/b&gt;creates subfolder /raw&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="350" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-7" edge="1" parent="1" source="gjXERksRl2f-HJDjF30g-6" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="410" y="390" as="sourcePoint" />
+            <mxPoint x="410" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="User drops scripts into /raw manually" vertex="1">
+          <mxGeometry height="60" width="120" x="350" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-9" edge="1" parent="1" source="gjXERksRl2f-HJDjF30g-8" style="endArrow=classic;html=1;rounded=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="410" as="sourcePoint" />
+            <mxPoint x="530" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rounded=1;labelBackgroundColor=none;" value="&lt;b&gt;SYNC command&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="530" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-11" edge="1" parent="1" source="gjXERksRl2f-HJDjF30g-10" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="410" as="sourcePoint" />
+            <mxPoint x="570" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="&lt;b&gt;inu &lt;/b&gt;validates scripts" vertex="1">
+          <mxGeometry height="60" width="120" x="510" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-14" edge="1" parent="1" source="gjXERksRl2f-HJDjF30g-13" style="endArrow=classic;html=1;rounded=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;labelBackgroundColor=none;fontColor=default;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="410" as="sourcePoint" />
+            <mxPoint x="570" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gjXERksRl2f-HJDjF30g-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="&lt;b&gt;inu &lt;/b&gt;moves approved scripts to /inbox" vertex="1">
+          <mxGeometry height="60" width="120" x="510" y="670" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
