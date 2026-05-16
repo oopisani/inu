@@ -46,9 +46,11 @@ b. After that, you can **manually** place any scripts you want into the `raw` fo
 
 c. Now you can run `sync` or `java -jar app\inu.jar sync`, and all approved scripts will be moved into the `inbox` folder.
 
-For more details, see the flow diagram:
+<strong>For more details, see the flow diagram:</strong>
 
-<img src="assets/inu_flow_first_use_image.png" width="30%" />
+<p align="center">
+  <img src="assets/inu_flow_first_use_image.png" width="30%" />
+</p>
 
 ## Daily use
 a. How to move a script to a tag folder:  
