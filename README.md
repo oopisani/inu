@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/status-pre--release-orange" />
 </p>
 
-## Sobre
+## About me
 <p><strong>inu</strong> is a lightweight automation framework built with native Java, Apache Commons libraries, and Log4j2 designed around structured execution logging and full workflow traceability. Every action including running, deleting, organizing or scheduling scripts is tracked through dynamic weekly logs providing clear visibility of system behavior successes and failures.
 It provides a centralized workspace for managing Python PowerShell and Shell scripts through a controlled automation pipeline combining organization execution and monitoring in a single environment.</p>
 
