@@ -120,8 +120,14 @@ public class Script {
             if(Files.exists(script)) {
                 try {
                     ProcessBuilder pb = getProcessBuilder(ext, script.toFile());
-                    pb.inheritIO();
+                    // Merges stdout/stderr from the subprocess
+                    pb.redirectErrorStream(true);
                     Process process = pb.start();
+                    // process.getInputStream() provides the subprocess output stream.
+                    // InputStreamReader converts raw bytes from the InputStream into readable text.
+                    // BufferedReader makes line-by-line reading easier.
+                    BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                    br.lines().forEach(logger::warn);
                     int exitCode = process.waitFor();
                     if (exitCode == 0) {
                         logger.info("[SUCCESS] Running script  '{}' with (exit '{}')", scriptName, exitCode);
