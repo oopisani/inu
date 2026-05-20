@@ -3,8 +3,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -60,6 +64,10 @@ public class Script {
 
     public Path getScript() {
         return script;
+    }
+
+    public String getExt() {
+        return ext;
     }
 
     /**
@@ -126,7 +134,7 @@ public class Script {
                     // process.getInputStream() provides the subprocess output stream.
                     // InputStreamReader converts raw bytes from the InputStream into readable text.
                     // BufferedReader makes line-by-line reading easier.
-                    BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream()));
+                    BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), StandardCharsets.UTF_8));
                     br.lines().forEach(logger::warn);
                     int exitCode = process.waitFor();
                     if (exitCode == 0) {
@@ -150,13 +158,26 @@ public class Script {
     /**
      * Manufactures the ProcessBuilder configuration based on the script extension.
      */
-    private @NotNull ProcessBuilder getProcessBuilder(String ext, File script) {
+    public @NotNull ProcessBuilder getProcessBuilder(String ext, File script) {
         ProcessBuilder pb;
         switch (ext) {
-            case "py" -> pb = new ProcessBuilder("python", script.getAbsolutePath());
+            case "py" -> {
+                pb = new ProcessBuilder("python", "-X", "utf8", "\"" + script.getAbsolutePath() + "\"");
+                pb.environment().put("PYTHONIOENCODING", "utf-8");
+            }
             case "ps1" ->
-                    pb = new ProcessBuilder("powershell", "-ExecutionPolicy", "Bypass", "-File", script.getAbsolutePath());
-            case "sh" -> pb = new ProcessBuilder("bash", script.getAbsolutePath());
+                    pb = new ProcessBuilder("powershell",
+                            "-ExecutionPolicy",
+                            "Bypass",
+                            "-Command",
+                            "[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; " +
+                            " $OutputEncoding = [System.Text.Encoding]::UTF8; " +
+                            "& '" + script.getAbsolutePath() + "'");
+            case "sh" -> {
+
+                pb = new ProcessBuilder("bash", "\"" + script.getAbsolutePath() + "\"");
+                pb.environment().put("LANG", "en_US.UTF-8");
+            }
             default -> throw new IllegalArgumentException(
                     "Unsupported extension: " + ext
             );
