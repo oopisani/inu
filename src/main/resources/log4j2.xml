@@ -3,6 +3,7 @@
     <Appenders>
         <Console name="console" target="SYSTEM_OUT">
             <PatternLayout disableAnsi="false"
+              charset="CP850"
                     pattern="%d{HH:mm:ss.SSS} [%t] %highlight{%-5level} %style{%logger{36}}{cyan} - %msg%n" />
         </Console>
 
