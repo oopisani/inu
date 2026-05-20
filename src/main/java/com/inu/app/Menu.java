@@ -271,7 +271,7 @@ public class Menu {
         2. SYNCHRONIZE (RAW > INBOX)
            sync                             sync approve scripts from RAW to INBOX
         
-        3. MOVING (INBOX → TAG)
+        3. MOVING (INBOX > TAG)
            name.ext tag                     move script to a specific tag folder
            
         4. EXECUTION
