@@ -277,7 +277,7 @@ public class Menu {
         4. EXECUTION
            name.ext tag                     run script
            name.ext tag                     delete script
-           name.ext tag timing frequency    scheduleScript script (Windows Task Scheduler)
+           name.ext tag timing frequency    schedule script (Windows Task Scheduler)
            
         5. UTILITY
            list                             list scripts
