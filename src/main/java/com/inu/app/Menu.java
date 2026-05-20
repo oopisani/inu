@@ -235,7 +235,7 @@ public class Menu {
                       run     run script
                       del     delete script
                       list    list scripts
-                      task    scheduleScript task (Windows Task Scheduler)
+                      task    schedule script
                       ex      exit
                    
                    """);
