@@ -21,7 +21,7 @@ public class Script {
     private final String folderName;
     private final String tag;
     private final String ext;
-    private final List<String> SUPPORTED_TAGS = Arrays.asList("cyber", "study", "general", "sys", "work");
+    private final List<String> SUPPORTED_TAGS = Arrays.asList("cyber", "study", "general", "sys", "work", "temp");
     private final List<String> SUPPORTED_EXTENSIONS = Arrays.asList("py", "sh", "ps1");
     private static final Logger logger = LogManager.getLogger(Script.class);
 
