@@ -58,7 +58,7 @@ private static final Logger logger = LogManager.getLogger(ScheduleScript.class);
                     pb.redirectErrorStream(true);
                     Process process = pb.start();
                     BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), Charset.forName("CP850")));
-                    br.lins().forEach(logger::warn);
+                    br.lines().forEach(logger::warn);
                     int exitCode = process.waitFor();
                     if (exitCode == 0) {
                         logger.info("[SUCCESS] Task scheduled: {}", this.getScriptName());
