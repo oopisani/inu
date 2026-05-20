@@ -268,7 +268,7 @@ public class Menu {
         1. SYSTEM SETUP 
            init                            initialize environment (create folders)
         
-        2. SYNCHRONIZE (RAW → INBOX)
+        2. SYNCHRONIZE (RAW > INBOX)
            sync                             sync approve scripts from RAW to INBOX
         
         3. MOVING (INBOX → TAG)
