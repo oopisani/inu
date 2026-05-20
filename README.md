@@ -8,12 +8,23 @@
   <img src="https://img.shields.io/badge/Java-24-blue" />
   <img src="https://img.shields.io/badge/OS-Windows%20%7C%20Linux-lightgrey" />
   <img src="https://img.shields.io/badge/Interface-CLI-black" />
-  <img src="https://img.shields.io/badge/status-pre--release-orange" />
+  <img src="https://img.shields.io/badge/status-active%20development-yellow" />
 </p>
 
 ## About me
-<p><strong>inu</strong> is a lightweight automation framework built with native Java, Apache Commons libraries, and Log4j2 designed around structured execution logging and full workflow traceability. Every action including running, deleting, organizing or scheduling scripts is tracked through dynamic weekly logs providing clear visibility of system behavior successes and failures.
-It provides a centralized workspace for managing Python PowerShell and Shell scripts through a controlled automation pipeline combining organization execution and monitoring in a single environment.</p>
+<p><strong>inu</strong> is a lightweight automation and orchestration framework built with
+native Java, Apache Commons libraries, and Log4j2, focused on workflow
+traceability, structured logging, and centralized script management.
+The project is designed around an evolving automation architecture,
+including a custom command parsing system and unified multi-language
+script orchestration.</p>
+
+
+## Project Status
+
+<strong>inu is currently under active development.
+Core functionality is operational, but major architectural improvements,
+refactors, and stability changes are still ongoing.</strong>
 
 ## Core Features
 
@@ -27,30 +38,30 @@ It provides a centralized workspace for managing Python PowerShell and Shell scr
 
 ## Requirements
 
-* **Operating System:** Windows 10, Windows 11 or Linux.
-  
-* **Recommended Storage:** SSD.
-  
-> [!IMPORTANT]
-> Task scheduling support in the current pre-release version is currently available only on Windows.
+* **Operating System:** Windows 10, Windows 11 or Linux.  
+* **Python, PowerShell, or Shell environments depending on the scripts being executed.**
 
 ## First use
 
-a. In the Interactive CLI Mode, enter `init` to create the `inu-workspace` folder, or use:
-`java -jar app\inu.jar init`
+a. On first execution, inu automatically creates the `inu-workspace`
+directory inside `user.home`, including the logging structure required
+for execution traceability.
 
-> You will see the `inu-workspace` directory created in `user.home`, containing the folders `inbox`, `raw`, `scripts`,
-> and additional subfolders that act as tag folders, allowing you to organize your scripts based on their purpose.
+b. To initialize the operational workspace structure, run:
 
-b. After that, you can **manually** place any scripts you want into the `raw` folder. Once done, you can return to the CLI.
+`init`
 
-c. Now you can run `sync` or `java -jar app\inu.jar sync`, and all approved scripts will be moved into the `inbox` folder.
+c. This will create directories such as:
 
-<strong>For more details, see the flow diagram:</strong>
+- `raw`
+- `inbox`
+- `scripts`
+- `organizational tag folders`
 
-<p align="center">
-  <img src="assets/inu_flow_first_use_image.png" width="30%" />
-</p>
+d. After initialization, scripts can be manually placed into the `raw`
+folder and processed through the synchronization pipeline using:
+
+`sync`
 
 ## Daily use
 a. How to move a script to a tag folder:  
@@ -91,10 +102,13 @@ f. How to list scripts (3 ways):
   **Interactive CLI Mode:** Enter `list` → Input: `tag` → `tagfoldername`  
   **CLI Mode:** `java -jar app\inu.jar list tag tagfoldername`
   
-
-
-## Next Implementations
-<p>🐾 Graphical interface for the Interactive CLI Mode while keeping the CLI Mode fully functional.</p>
-<p>🐾 Hybrid database system to manage script metadata, improving indexing, search, and organization across the workspace.</p>
-<p>🐾 Logging improvements focused on better structure, clarity, and deeper execution traceability across all operations.</p>
-<p>🐾 Expanded Linux support with integration for `cron`, enabling task scheduling compatibility across Linux environments.
+  
+## Flow diagram:
+<p align="center">
+  <a href="https://mermaid.live/edit#pako:eNp1lFFv2jAUhf_KlaWunRQqEtKA_DApLSlNVwKCVJta-uAlBqwGO7Kdlhbx3-c4wEbX5SXxyfE9382NvEGZyCnCaF6I12xJpIa0P-NgrpMTiNJwHIKLYZqGk7SRw7NHuFdUAl3TrNJUAePV01dotb7B5SNM35SmK8gkJbt3rVchn1VJMvrUVPhQ3jPlo_R-3MiXttDVPkRWXMEp40yfPn1tHFfW0f8nSpJXx-T9EmsHVCZZqRUQnoMmC5iLIqdSfQ7QwRAng2iaxqMEzibhj11Q3wZFBmVIeEUKmGpa4oYrl6JUhxjGtajz94gfAnwM43gc3cVJZOuDKRsnl6OfO3tkg66Pe1ZvPDv0fG0dg0PPL6Rgue36C6zEi7mTSi-FZO80P1AZJvs5Pu_6AsNoMgiT-CFsGrdENVoaDqa73IHNvTkmqwMPZDfWER_IGpo9wlyKVQNR0-RUMUntRP4zigBDMpoMwzu4n4aDqHkb24jbTSLkykxhSHkFo5JKopngavt3oVtr_W54DeoesRHvjJjT4lgcGlET9XysJkYtmNLH6sioS1qUx-rYqHTNrBc5aCFZjrCWFXXQihreeok29Y4Z0ku6ojOEzWNO5PMMzfjW7CkJfxBitd8mRbVYIjwnhTKrqqzn3GdkIckfC-Xmd74SFdcIu92uZ4sgvEFrhL2Of-5ddHpur931Ou3A6zroDeGW5_fOA8_1AtcNOj2_HWwd9G5zXeMPuoEfXLQ7vt_ze4GDaM60kMPmcLBnxPY3ZLg1AA">
+    <img 
+      src="https://mermaid.ink/img/pako:eNp1lFFv2jAUhf_KlaWunRQqEtKA_DApLSlNVwKCVJta-uAlBqwGO7Kdlhbx3-c4wEbX5SXxyfE9382NvEGZyCnCaF6I12xJpIa0P-NgrpMTiNJwHIKLYZqGk7SRw7NHuFdUAl3TrNJUAePV01dotb7B5SNM35SmK8gkJbt3rVchn1VJMvrUVPhQ3jPlo_R-3MiXttDVPkRWXMEp40yfPn1tHFfW0f8nSpJXx-T9EmsHVCZZqRUQnoMmC5iLIqdSfQ7QwRAng2iaxqMEzibhj11Q3wZFBmVIeEUKmGpa4oYrl6JUhxjGtajz94gfAnwM43gc3cVJZOuDKRsnl6OfO3tkg66Pe1ZvPDv0fG0dg0PPL6Rgue36C6zEi7mTSi-FZO80P1AZJvs5Pu_6AsNoMgiT-CFsGrdENVoaDqa73IHNvTkmqwMPZDfWER_IGpo9wlyKVQNR0-RUMUntRP4zigBDMpoMwzu4n4aDqHkb24jbTSLkykxhSHkFo5JKopngavt3oVtr_W54DeoesRHvjJjT4lgcGlET9XysJkYtmNLH6sioS1qUx-rYqHTNrBc5aCFZjrCWFXXQihreeok29Y4Z0ku6ojOEzWNO5PMMzfjW7CkJfxBitd8mRbVYIjwnhTKrqqzn3GdkIckfC-Xmd74SFdcIu92uZ4sgvEFrhL2Of-5ddHpur931Ou3A6zroDeGW5_fOA8_1AtcNOj2_HWwd9G5zXeMPuoEfXLQ7vt_ze4GDaM60kMPmcLBnxPY3ZLg1AA?type=png"
+      width="30%"
+    />
+  </a>
+</p>
