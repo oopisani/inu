@@ -42,7 +42,7 @@ public class Cli {
             try {
                 switch (option) {
                     case "run", "del" -> {
-                        CommandParser parser = new CommandParser(input);
+                        CommandParserCli parser = new CommandParserCli(input);
                         Script script = new Script(parser.getName(),
                                 parser.getExtension(),
                                 parser.getTag());
@@ -54,7 +54,7 @@ public class Cli {
                         }
                     }
                     case "task" -> {
-                        CommandParser parser = new CommandParser(input);
+                        CommandParserCli parser = new CommandParserCli(input);
                         ScheduleScript scheduleScript = new ScheduleScript(parser.getName(),
                                 parser.getExtension(),
                                 parser.getTag(),
@@ -83,7 +83,7 @@ public class Cli {
                         }
                     }
                     case "move" -> {
-                        CommandParser parser = new CommandParser(input);
+                        CommandParserCli parser = new CommandParserCli(input);
                         Script script = new Script(parser.getName(),
                                 parser.getExtension(),
                                 parser.getTag());
